@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #121212 !important;
+    color: #ece7e4 !important;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-skill{
+    width: 40%;
+    height: 100%;
+}
+.heading {
+    font-size: 4rem !important;
+    font-weight: 200;
+}
+.heading span{
+    font-size: 4rem;
+    color: #7c69ef;
+    transition: color 0.2s;
+}
+.boxes {
+    width: 100%;
+    height: 100%;
+    perspective: 150rem;
+}
+
+.active.box{
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+.box{
+    transform-style: preserve-3d;
+    transform: rotateY(45deg) rotateX(30deg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+@keyframes boxAnim{
+    0% {
+        transform: rotateX(0) rotatey(0) rotateZ(0); 
+    }
+    100% {
+        transform: rotateX(360deg) rotatey(360deg) rotateZ(360deg); 
+    }
+}
+
+.box-1{
+    left: -25rem;
+    top: -6rem;
+    animation: boxAnim 100s infinite linear;
+}
+.box-2{
+    left: -11rem;
+    top: -23rem;
+    animation: boxAnim 100s -10s infinite linear;
+}
+.box-3{
+    left: 10rem;
+    top: -23rem;
+    animation: boxAnim 100s -20s infinite linear;
+}
+.box-4{
+    left: 25rem;
+    top: -6rem;
+    animation: boxAnim 100s -30s infinite linear;
+}
+.box-5{
+    left: 22rem;
+    top: 13rem;
+    animation: boxAnim 100s -40s infinite linear;
+}
+.box-6{
+    left: 0rem;
+    top: 25rem;
+    animation: boxAnim 100s -50s infinite linear;
+}
+.box-7{
+    left: -21em;
+    top: 14rem;
+    animation: boxAnim 100s -60s infinite linear;
+}
+
+.active.box div{
+    width: 16rem;
+    height: 16rem;
+    transition: all .2s .5s ease-in-out;
+}
+
+.box div{
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    box-shadow: 0.1rem 0.1rem 0.1rem #eee inset, -0.1rem -0.1rem 0.1rem #eee inset, 0.1rem 0.1rem 3.5rem rgba(255, 255, 255,0.2), -0.1rem -0.1rem 3.5rem rgba(255, 255, 255,0.2);
+    opacity: 0.6;
+}
+
+.box-1 div{
+    /* Bootstrap */
+    background-color: #7c69ef !important;
+}
+.box-2 div{
+    /* JS */
+    background-color: #d6c227 !important;
+}
+.box-3 div{
+    /* CSS */
+    background-color: #2711ee !important;
+}
+.box-4 div{
+    /* Html */
+    background-color: #FFA500 !important;
+}
+.box-5 div{
+    /* React */
+    background-color: #59cce9 !important;
+}
+.box-6 div{
+    /* Python and maybe django */
+    background-color: #2bb436 !important;
+}
+.box-7 div{
+    /* Restfull api and sql */
+    background-color: #c0060f !important;
+}
+
+.top-side{
+    transform: rotateX(90deg) translateZ(3.5rem);
+}
+.bottom-side{
+    transform: rotateX(90deg) translateZ(-3.5rem);
+}
+.front-side{
+    transform: translateZ(3.5rem);
+}
+.back-side{
+    transform: translateZ(-3.5rem);
+}
+.right-side{
+    transform: translateX(3.5rem) rotateY(-90deg);
+}
+.left-side{
+    transform: translateX(-3.5rem) rotateY(-90deg);
+}
+
+.active .top-side{
+    transform: rotateX(90deg) translateZ(8rem);
+}
+.active .bottom-side{
+    transform: rotateX(90deg) translateZ(-8rem);
+}
+.active .front-side{
+    transform: translateZ(8rem);
+}
+.active .back-side{
+    transform: translateZ(-8rem);
+}
+.active .right-side{
+    transform: translateX(8rem) rotateY(-90deg);
+}
+.active .left-side{
+    transform: translateX(-8rem) rotateY(-90deg);
+}
